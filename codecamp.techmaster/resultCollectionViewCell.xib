@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="resultCollectionViewCell" id="gTV-IL-0wX" customClass="resultCollectionViewCell" customModule="codecamp_techmaster" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="207" height="274"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="207" height="274"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p9S-Qp-db5">
+                        <rect key="frame" x="0.0" y="0.0" width="207" height="207"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="p9S-Qp-db5" secondAttribute="height" id="eaf-Tb-ME2"/>
+                        </constraints>
+                    </imageView>
+                    <textField opaque="NO" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="trackName" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G1i-yp-p67">
+                        <rect key="frame" x="0.0" y="207" width="207" height="15"/>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="singerName" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SVn-TL-UWQ">
+                        <rect key="frame" x="0.0" y="257" width="207" height="17"/>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="SVn-TL-UWQ" secondAttribute="bottom" id="Kag-Ww-o9w"/>
+                <constraint firstItem="G1i-yp-p67" firstAttribute="top" secondItem="p9S-Qp-db5" secondAttribute="bottom" id="QaE-mp-wT0"/>
+                <constraint firstItem="G1i-yp-p67" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Tle-F1-Ri2"/>
+                <constraint firstAttribute="trailing" secondItem="SVn-TL-UWQ" secondAttribute="trailing" id="UjZ-73-1hw"/>
+                <constraint firstItem="p9S-Qp-db5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="gqL-cz-zTe"/>
+                <constraint firstItem="SVn-TL-UWQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="pzk-Mz-4cs"/>
+                <constraint firstAttribute="trailing" secondItem="G1i-yp-p67" secondAttribute="trailing" id="qX3-TS-Wwj"/>
+                <constraint firstItem="p9S-Qp-db5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ssu-pk-3De"/>
+                <constraint firstAttribute="trailing" secondItem="p9S-Qp-db5" secondAttribute="trailing" id="u9y-dO-Z81"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="490" height="733"/>
+            <connections>
+                <outlet property="artistNameLabel" destination="SVn-TL-UWQ" id="BJx-Xb-HVS"/>
+                <outlet property="imageView" destination="p9S-Qp-db5" id="aV4-Vs-ZWG"/>
+                <outlet property="trackNameLabel" destination="G1i-yp-p67" id="PoK-PY-fa8"/>
+            </connections>
+            <point key="canvasLocation" x="-275.5" y="165"/>
+        </collectionViewCell>
+    </objects>
+</document>
