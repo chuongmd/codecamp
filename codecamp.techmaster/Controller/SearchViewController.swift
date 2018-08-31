@@ -1,5 +1,4 @@
-//
-//  ViewController.swift
+////  ViewController.swift
 //  codecamp.techmaster
 //
 //  Created by chuongmd on 8/19/18.
@@ -16,20 +15,25 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var searchCollectionView: UICollectionView!
     
     @IBAction func buttonMusicFilter(_ sender: UIButton) {
+        mediaType = "music"
         if let text = searchBar.text, !text.isEmpty {
             search(text)
         }
+        
     }
     
     @IBAction func buttonVideoFilter(_ sender: UIButton) {
+        mediaType = "musicVideo"
         if let text = searchBar.text, !text.isEmpty {
             search(text)
         }
+        
     }
     
-    
+    var mediaType = ""
     var items: [Item] = []
-    var isloading = false
+//    var isloading = false
+    
     
     
     override func viewDidLoad() {
@@ -62,7 +66,7 @@ class SearchViewController: UIViewController {
         
         let parameter: Parameters =
             
-            [ "media" : "all",
+            [ "media" : mediaType,
               "lang" : "en_us",
               "limit" : "20",
               "term" : searchKey ]

@@ -17,11 +17,13 @@ struct Item: Codable {
     var artworkUrl: URL?
     var artistName: String
     var trackName: String
+    var previewUrl: URL?
     
     enum CodingKeys: String, CodingKey {
         case trackName
         case artistName
         case artworkUrl = "artworkUrl100"
+        case previewUrl
     }
 
     init(from decoder: Decoder) throws {
@@ -29,5 +31,6 @@ struct Item: Codable {
         self.artistName = try values.decode(String.self, forKey: .artistName)
         self.trackName = try values.decode(String.self, forKey: .trackName)
         self.artworkUrl = try? values.decode(URL.self, forKey: .artworkUrl)
+        self.previewUrl = try? values.decode(URL.self, forKey: .previewUrl)
     }
 }

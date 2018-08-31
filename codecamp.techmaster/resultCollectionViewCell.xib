@@ -26,28 +26,22 @@
                             <constraint firstAttribute="width" secondItem="p9S-Qp-db5" secondAttribute="height" id="eaf-Tb-ME2"/>
                         </constraints>
                     </imageView>
-                    <textField opaque="NO" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="trackName" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G1i-yp-p67">
-                        <rect key="frame" x="0.0" y="207" width="207" height="15"/>
+                    <textField opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="trackName" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G1i-yp-p67">
+                        <rect key="frame" x="0.0" y="207" width="207" height="28"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <nil key="textColor"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="singerName" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SVn-TL-UWQ">
-                        <rect key="frame" x="0.0" y="257" width="207" height="17"/>
-                        <nil key="textColor"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="singerName" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SVn-TL-UWQ">
+                        <rect key="frame" x="0.0" y="243" width="207" height="31"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <attributedString key="attributedText"/>
                         <textInputTraits key="textInputTraits"/>
                     </textField>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="SVn-TL-UWQ" secondAttribute="bottom" id="Kag-Ww-o9w"/>
-                <constraint firstItem="G1i-yp-p67" firstAttribute="top" secondItem="p9S-Qp-db5" secondAttribute="bottom" id="QaE-mp-wT0"/>
-                <constraint firstItem="G1i-yp-p67" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Tle-F1-Ri2"/>
-                <constraint firstAttribute="trailing" secondItem="SVn-TL-UWQ" secondAttribute="trailing" id="UjZ-73-1hw"/>
                 <constraint firstItem="p9S-Qp-db5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="gqL-cz-zTe"/>
-                <constraint firstItem="SVn-TL-UWQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="pzk-Mz-4cs"/>
-                <constraint firstAttribute="trailing" secondItem="G1i-yp-p67" secondAttribute="trailing" id="qX3-TS-Wwj"/>
                 <constraint firstItem="p9S-Qp-db5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ssu-pk-3De"/>
                 <constraint firstAttribute="trailing" secondItem="p9S-Qp-db5" secondAttribute="trailing" id="u9y-dO-Z81"/>
             </constraints>
