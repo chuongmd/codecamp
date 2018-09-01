@@ -19,7 +19,6 @@ class SearchViewController: UIViewController {
         if let text = searchBar.text, !text.isEmpty {
             search(text)
         }
-        
     }
     
     @IBAction func buttonVideoFilter(_ sender: UIButton) {
@@ -27,14 +26,10 @@ class SearchViewController: UIViewController {
         if let text = searchBar.text, !text.isEmpty {
             search(text)
         }
-        
     }
     
     var mediaType = ""
     var items: [Item] = []
-//    var isloading = false
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,20 +41,6 @@ class SearchViewController: UIViewController {
         
         searchBar.delegate = self
     }
-    
-    //    func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-    
-    //        let newText = (searchBar.text! as NSString).replacingCharacters(in: range, with: text)
-    //        if newText.count > 0 {
-    //            search(newText)
-    //        } else {
-    //            items = []
-    //            searchCollectionView.reloadData()
-    //        }
-    //        return true
-    //    }
-    
-    
     func search(_ searchKey: String) {
         
         let baseURLString = "https://itunes.apple.com/search"
@@ -88,32 +69,6 @@ class SearchViewController: UIViewController {
                 }
             }
         }
-        
-        //        let urlString = String(format: "https://itunes.apple.com/search?term=%@", searchKey)
-        //        guard let encodedUrlString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-        //            let url = URL(string: encodedUrlString)  else {
-        //                return
-        //            }
-        //
-        //
-        //        isloading = true
-        //        searchCollectionView.reloadData()
-        //
-        //        Alamofire.request(url, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON {(reponse) in
-        //            self.isloading = false
-        //            guard let data = reponse.data
-        //                else {
-        //                return
-        //            }
-        //
-        //            self.items = self.parse(data: data)
-        //            print(self.items)
-        //            DispatchQueue.main.async {
-        //                self.searchCollectionView.reloadData()
-        //            }
-        //
-        //        }
-        
     }
 }
 
