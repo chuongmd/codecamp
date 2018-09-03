@@ -18,12 +18,20 @@ struct Item: Codable {
     var artistName: String
     var trackName: String
     var previewUrl: URL?
+    var artistViewUrl: URL?
+    var trackPrice: Double?
+    var country: String
+    
+    
     
     enum CodingKeys: String, CodingKey {
         case trackName
         case artistName
         case artworkUrl = "artworkUrl100"
         case previewUrl
+        case artistViewUrl
+        case trackPrice
+        case country
     }
 
     init(from decoder: Decoder) throws {
@@ -32,5 +40,8 @@ struct Item: Codable {
         self.trackName = try values.decode(String.self, forKey: .trackName)
         self.artworkUrl = try? values.decode(URL.self, forKey: .artworkUrl)
         self.previewUrl = try? values.decode(URL.self, forKey: .previewUrl)
+        self.artistViewUrl = try? values.decode(URL.self, forKey: .artistViewUrl)
+        self.trackPrice = try? values.decode(Double.self, forKey: .trackPrice)
+        self.country = try values.decode(String.self, forKey: .country)
     }
 }

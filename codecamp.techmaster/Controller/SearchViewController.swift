@@ -1,9 +1,9 @@
-////  ViewController.swift
-//  codecamp.techmaster
-//
-//  Created by chuongmd on 8/19/18.
-//  Copyright © 2018 chuongmd. All rights reserved.
-//
+/*  ViewController.swift
+  codecamp.techmaster
+
+  Created by chuongmd on 8/19/18.
+  Copyright © 2018 chuongmd. All rights reserved.
+*/
 
 import UIKit
 import Alamofire
@@ -86,8 +86,7 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let witdth = (collectionView.bounds.width - 20 - 40) / 2
-        
-        return CGSize(width: witdth, height: 200)
+        return CGSize(width: witdth, height: 230)
     }
 }
 
@@ -104,9 +103,9 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         let item = items[indexPath.row]
         
         cell.layer.cornerRadius = 9.0
-        cell.backgroundColor = UIColor.brown
-        cell.trackNameLabel.text = item.trackName
-        cell.artistNameLabel.text = item.artistName
+        cell.backgroundColor = UIColor.green
+        cell.trackName.text = item.trackName
+        cell.artistName.text = item.artistName
         cell.imageView.af_setImage(withURL: item.artworkUrl!)
         
         return cell

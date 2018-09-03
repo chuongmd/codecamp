@@ -7,33 +7,29 @@
 //
 
 import UIKit
+import AVFoundation
 
 class DetailViewController: UIViewController {
+    @IBOutlet weak var trackNamePlayer: UILabel!
+    @IBOutlet weak var artistNamePlayer: UILabel!
+    @IBOutlet weak var trackPricePlayer: UILabel!
+    @IBOutlet weak var countryPlayer: UILabel!
+    @IBOutlet weak var typePlayer: UILabel!
+    @IBOutlet weak var artistPreviewImage: UIImageView!
     
     var item: Item?
+    var player: AVPlayer?
+    var playerItem: AVPlayerItem?
     
+    
+    
+    @IBAction func buttonPlay(_ sender: UIButton) {
+        
+    }
+
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-        print(item!)
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }
