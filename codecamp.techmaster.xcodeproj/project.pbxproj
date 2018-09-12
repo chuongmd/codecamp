@@ -16,6 +16,8 @@
 		722CC83C212974C3008FAC2B /* resultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722CC83A212974C3008FAC2B /* resultCollectionViewCell.swift */; };
 		722CC83D212974C3008FAC2B /* resultCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 722CC83B212974C3008FAC2B /* resultCollectionViewCell.xib */; };
 		722CC83F21298036008FAC2B /* result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722CC83E21298036008FAC2B /* result.swift */; };
+		7238309D21421DD300FD2B17 /* playerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238309C21421DD300FD2B17 /* playerViewController.swift */; };
+		7238309F2142207600FD2B17 /* MediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7238309E2142207600FD2B17 /* MediaType.swift */; };
 		72BEC34E2137AC380098C6F6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BEC34D2137AC380098C6F6 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +32,8 @@
 		722CC83A212974C3008FAC2B /* resultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resultCollectionViewCell.swift; sourceTree = "<group>"; };
 		722CC83B212974C3008FAC2B /* resultCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = resultCollectionViewCell.xib; sourceTree = "<group>"; };
 		722CC83E21298036008FAC2B /* result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = result.swift; sourceTree = "<group>"; };
+		7238309C21421DD300FD2B17 /* playerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playerViewController.swift; sourceTree = "<group>"; };
+		7238309E2142207600FD2B17 /* MediaType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaType.swift; sourceTree = "<group>"; };
 		72BEC34D2137AC380098C6F6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9FFDCBD86C9A11679C74E226 /* Pods-codecamp.techmaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-codecamp.techmaster.debug.xcconfig"; path = "Pods/Target Support Files/Pods-codecamp.techmaster/Pods-codecamp.techmaster.debug.xcconfig"; sourceTree = "<group>"; };
 		D984051DCBBE67FB067960BD /* Pods-codecamp.techmaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-codecamp.techmaster.release.xcconfig"; path = "Pods/Target Support Files/Pods-codecamp.techmaster/Pods-codecamp.techmaster.release.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 			children = (
 				722CC82821296BF8008FAC2B /* SearchViewController.swift */,
 				72BEC34D2137AC380098C6F6 /* DetailViewController.swift */,
+				7238309C21421DD300FD2B17 /* playerViewController.swift */,
+				7238309E2142207600FD2B17 /* MediaType.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -224,10 +230,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				722CC83C212974C3008FAC2B /* resultCollectionViewCell.swift in Sources */,
+				7238309D21421DD300FD2B17 /* playerViewController.swift in Sources */,
 				722CC82921296BF8008FAC2B /* SearchViewController.swift in Sources */,
 				72BEC34E2137AC380098C6F6 /* DetailViewController.swift in Sources */,
 				722CC83F21298036008FAC2B /* result.swift in Sources */,
 				722CC82721296BF8008FAC2B /* AppDelegate.swift in Sources */,
+				7238309F2142207600FD2B17 /* MediaType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

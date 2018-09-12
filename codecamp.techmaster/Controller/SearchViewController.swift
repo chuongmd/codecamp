@@ -15,20 +15,22 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var searchCollectionView: UICollectionView!
     
     @IBAction func buttonMusicFilter(_ sender: UIButton) {
-        mediaType = "music"
+        mediaType = .music
+        
         if let text = searchBar.text, !text.isEmpty {
             search(text)
         }
     }
     
     @IBAction func buttonVideoFilter(_ sender: UIButton) {
-        mediaType = "musicVideo"
+        mediaType = .video
+        
         if let text = searchBar.text, !text.isEmpty {
             search(text)
         }
     }
     
-    var mediaType = ""
+    var mediaType: MediaType = .music
     var items: [Item] = []
     
     override func viewDidLoad() {
@@ -45,9 +47,16 @@ class SearchViewController: UIViewController {
         
         let baseURLString = "https://itunes.apple.com/search"
         
+        let type: String
+        if mediaType == .music {
+            type = "music"
+        } else {
+            type = "musicVideo"
+        }
+        
         let parameter: Parameters =
             
-            [ "media" : mediaType,
+            [ "media" : type,
               "lang" : "en_us",
               "limit" : "20",
               "term" : searchKey ]

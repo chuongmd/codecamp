@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import AVFoundation
+import AlamofireImage
+import Alamofire
 
 class DetailViewController: UIViewController {
     @IBOutlet weak var trackNamePlayer: UILabel!
@@ -18,18 +19,39 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var artistPreviewImage: UIImageView!
     
     var item: Item?
-    var player: AVPlayer?
-    var playerItem: AVPlayerItem?
-    
-    
     
     @IBAction func buttonPlay(_ sender: UIButton) {
+        guard let navigationVC = storyboard?.instantiateViewController(withIdentifier: "navigationController") as? UINavigationController else {
+            return
+        }
         
+        guard let playerVC = navigationVC.viewControllers.first as? playerViewController else {
+            return
+        }
+        
+        playerVC.item = item
+        
+        present(navigationVC, animated: true, completion: nil)
     }
 
     override func viewDidLoad() {
+        if let item = item {
+            artistNamePlayer.text = "Artist Name: \(item.artistName)"          
+            artistPreviewImage.af_setImage(withURL: item.artworkUrl!)
+            trackNamePlayer.text = "Track Name: \(item.trackName)"
+        if let price = item.trackPrice {
+            trackPricePlayer.text = "Track Price: $\(price)"
+            } else {
+                trackPricePlayer.text = "N/A"
+            }
+            
+            countryPlayer.text = "Country: \(item.country)"
+            typePlayer.text = "Type: \(item.type.description)"
+        }
+        
         
     }
+    
     
     
 }
