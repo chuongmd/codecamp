@@ -38,15 +38,12 @@ class SearchViewController: UIViewController {
         
         searchCollectionView.dataSource = self
         searchCollectionView.delegate = self
-        
         searchCollectionView.register(UINib(nibName: "resultCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "resultCollectionViewCell")
-        
         searchBar.delegate = self
     }
     func search(_ searchKey: String) {
         
         let baseURLString = "https://itunes.apple.com/search"
-        
         let type: String
         if mediaType == .music {
             type = "music"
@@ -55,11 +52,11 @@ class SearchViewController: UIViewController {
         }
         
         let parameter: Parameters =
-            
             [ "media" : type,
               "lang" : "en_us",
               "limit" : "20",
               "term" : searchKey ]
+        
         
         Alamofire.request(baseURLString, method: .get, parameters: parameter).responseData { (response) in
             if let data = response.result.value, let utf8Text = String(data: data, encoding: .utf8) {
@@ -70,9 +67,7 @@ class SearchViewController: UIViewController {
                 do {
                     let results = try jsonDecoder.decode(Result.self, from: data)
                     self.items = results.results
-                    
                     self.searchCollectionView.reloadData()
-                    
                 } catch {
                     print(error.localizedDescription)
                 }
@@ -114,7 +109,7 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         cell.layer.cornerRadius = 9.0
         cell.backgroundColor = UIColor.green
         cell.trackName.text = item.trackName
-        cell.artistName.text = item.artistName
+//        cell.artistName.text = item.artistName
         cell.imageView.af_setImage(withURL: item.artworkUrl!)
         
         return cell
@@ -125,8 +120,7 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
             return
         }
         
-        let item = items[indexPath.row]
-        
+        let item = items[indexPath.row]        
         detailVC.item = item
         navigationController?.pushViewController(detailVC, animated: true)
         

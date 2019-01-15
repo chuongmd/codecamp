@@ -21,9 +21,6 @@ class playerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-       
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -35,7 +32,7 @@ class playerViewController: UIViewController {
         
         playerItem = AVPlayerItem(url:url)
         player = AVPlayer(playerItem: playerItem!)
-        timeObserver = player?.addPeriodicTimeObserver(forInterval: CMTimeMakeWithSeconds(1, 1), queue: DispatchQueue.main, using: { [weak self] (time) in
+        timeObserver = player?.addPeriodicTimeObserver(forInterval: CMTimeMakeWithSeconds(1, preferredTimescale: 1), queue: DispatchQueue.main, using: { [weak self] (time) in
             guard let player = self?.player else {
                 return
             }
@@ -48,7 +45,9 @@ class playerViewController: UIViewController {
         let deviceSize = UIScreen.main.bounds.size
         let playerSize:CGFloat = 300
         let playerLayer = AVPlayerLayer(player: player!)
-        playerLayer.backgroundColor = UIColor.black.cgColor
+        let playerContent = UIView()
+        playerContent.contentMode = UIView.ContentMode.scaleAspectFit
+        //        playerLayer.backgroundColor = UIColor.black.cgColor
         playerLayer.frame = CGRect(x: (deviceSize.width - playerSize) / 2 , y: 100, width: playerSize, height: playerSize)
         self.view.layer.addSublayer(playerLayer)
         
@@ -74,7 +73,7 @@ class playerViewController: UIViewController {
         playButton.setBackgroundImage(UIImage(named: "Play"), for: .normal)
         
         if let stopedPlayerItem: AVPlayerItem = notification.object as? AVPlayerItem {
-            stopedPlayerItem.seek(to: kCMTimeZero) { (isFinished) in
+            stopedPlayerItem.seek(to: CMTime.zero) { (isFinished) in
                 //
             }
         }
@@ -98,7 +97,7 @@ class playerViewController: UIViewController {
     
     @IBAction func sliderChanged(_ sender: Any) {
         let seconds : Int64 = Int64(slider.value)
-        let targetTime:CMTime = CMTimeMake(seconds, 1)
+        let targetTime:CMTime = CMTimeMake(value: seconds, timescale: 1)
         
         guard let player = player else {
             return

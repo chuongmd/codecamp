@@ -6,6 +6,7 @@
 //  Copyright © 2018 chuongmd. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import AlamofireImage
 import Alamofire
@@ -33,14 +34,14 @@ class DetailViewController: UIViewController {
         
         present(navigationVC, animated: true, completion: nil)
     }
-
+    
     override func viewDidLoad() {
         if let item = item {
             artistNamePlayer.text = "Artist Name: \(item.artistName)"          
             artistPreviewImage.af_setImage(withURL: item.artworkUrl!)
             trackNamePlayer.text = "Track Name: \(item.trackName)"
-        if let price = item.trackPrice {
-            trackPricePlayer.text = "Track Price: $\(price)"
+            if let price = item.trackPrice {
+                trackPricePlayer.text = "Track Price: $\(price)"
             } else {
                 trackPricePlayer.text = "N/A"
             }
@@ -48,10 +49,5 @@ class DetailViewController: UIViewController {
             countryPlayer.text = "Country: \(item.country)"
             typePlayer.text = "Type: \(item.type.description)"
         }
-        
-        
     }
-    
-    
-    
 }

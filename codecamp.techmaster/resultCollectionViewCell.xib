@@ -20,45 +20,32 @@
                 <rect key="frame" x="0.0" y="0.0" width="108" height="165"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p9S-Qp-db5">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="trackNameLabel" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w18-uC-SD6">
+                        <rect key="frame" x="0.0" y="108" width="108" height="57"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p9S-Qp-db5">
                         <rect key="frame" x="0.0" y="0.0" width="108" height="108"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="p9S-Qp-db5" secondAttribute="height" id="eaf-Tb-ME2"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="trackNameLabel" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w18-uC-SD6">
-                        <rect key="frame" x="0.0" y="108" width="108" height="30"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="30" id="Pgm-93-Ymi"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="artistNameLabel" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mql-Wp-dLu">
-                        <rect key="frame" x="0.0" y="138" width="108" height="27"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="Mql-Wp-dLu" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="1g3-7U-IDA"/>
-                <constraint firstItem="w18-uC-SD6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="3Eu-GY-6bt"/>
-                <constraint firstAttribute="trailing" secondItem="w18-uC-SD6" secondAttribute="trailing" id="CWP-SG-XaI"/>
-                <constraint firstAttribute="trailing" secondItem="Mql-Wp-dLu" secondAttribute="trailing" id="Ca3-Z1-I9u"/>
-                <constraint firstAttribute="bottom" secondItem="Mql-Wp-dLu" secondAttribute="bottom" id="SN8-53-MPz"/>
-                <constraint firstItem="w18-uC-SD6" firstAttribute="top" secondItem="p9S-Qp-db5" secondAttribute="bottom" id="cOW-hp-261"/>
-                <constraint firstItem="Mql-Wp-dLu" firstAttribute="top" secondItem="w18-uC-SD6" secondAttribute="bottom" id="dcF-Tt-DbV"/>
+                <constraint firstAttribute="bottom" secondItem="w18-uC-SD6" secondAttribute="bottom" id="72R-5J-obN"/>
+                <constraint firstAttribute="trailing" secondItem="w18-uC-SD6" secondAttribute="trailing" id="Mpg-dk-HA7"/>
                 <constraint firstItem="p9S-Qp-db5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="gqL-cz-zTe"/>
+                <constraint firstItem="w18-uC-SD6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="oQ3-aF-ANn"/>
+                <constraint firstItem="w18-uC-SD6" firstAttribute="top" secondItem="p9S-Qp-db5" secondAttribute="bottom" id="qwN-jQ-JMg"/>
                 <constraint firstItem="p9S-Qp-db5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="ssu-pk-3De"/>
                 <constraint firstAttribute="trailing" secondItem="p9S-Qp-db5" secondAttribute="trailing" id="u9y-dO-Z81"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="391" height="693"/>
             <connections>
-                <outlet property="artistName" destination="Mql-Wp-dLu" id="GxZ-bx-iSS"/>
                 <outlet property="imageView" destination="p9S-Qp-db5" id="aV4-Vs-ZWG"/>
                 <outlet property="trackName" destination="w18-uC-SD6" id="3eI-p0-efy"/>
             </connections>
